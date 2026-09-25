@@ -88,6 +88,91 @@ public class MainActivity extends AppCompatActivity {
                 total = 0; //zera o valor total para não dar erro
             }
         });
+
+        btn04.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 4;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
+        btn05.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 5;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
+        btn06.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 6;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
+        btn07.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 7;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
+        btn08.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 8;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
+        btn09.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 9;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
+        btn00.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count < 7) {
+                    Result[i] = (Result[i] * 10) + 0;
+                    count++;
+                }
+                exibirResultado();
+                total = 0;
+            }
+        });
+
         // demais botões:
         //botões de operação
         btnSoma.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +186,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 operador = "sub";
+                proximoNumero();
+            }
+        });
+
+        btnMult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operador = "mult";
+                proximoNumero();
+            }
+        });
+
+        btnDiv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                operador = "div";
                 proximoNumero();
             }
         });
@@ -162,6 +263,14 @@ public class MainActivity extends AppCompatActivity {
         switch (operador){
             case "soma": total = (Result[0] + Result[1]); break;
             case "sub":  total = (Result[0] - Result[1]); break;
+            case "mult": total = (Result[0] * Result[1]); break;
+            case "div":
+                if (Result[1] != 0) {
+                    total = (Result[0] / Result[1]);
+                } else {
+                    total = INVALID + 1;
+                }
+                break;
         }
         if(total < INVALID){
             Result[0] = total;
@@ -169,13 +278,4 @@ public class MainActivity extends AppCompatActivity {
             i = 1;
         }
     }
-
-
-
-
-
-
-
-
-
 }
